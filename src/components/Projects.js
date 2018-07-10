@@ -9,7 +9,7 @@ class Projects extends Component {
         //console.log(project);
         //console.log(<ProjectItem key={project.title} project={project} />);
         return (
-          <ProjectItem key={project.title} project={project} />
+          <ProjectItem key={project.id} project={project} />
         );
       });
     }
@@ -17,8 +17,8 @@ class Projects extends Component {
     //console.log(this.props);
     return (
       <div className="Projects">
+        <h3>Latest Projects</h3>
         {projectItems}
-        {console.log(projectItems[0])}
       </div>
     );
   }
