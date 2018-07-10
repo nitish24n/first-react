@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import ProjectItem from './ProjectItem';
 
 class Projects extends Component {
+
+  deleteProjectItem(id){
+    this.props.onDelete(id);
+  }
+
+
   render() {
     let projectItems;
     if(this.props.projects){
@@ -9,7 +15,7 @@ class Projects extends Component {
         //console.log(project);
         //console.log(<ProjectItem key={project.title} project={project} />);
         return (
-          <ProjectItem key={project.id} project={project} />
+          <ProjectItem onDelete={this.deleteProjectItem.bind(this)} key={project.id} project={project} />
         );
       });
     }
