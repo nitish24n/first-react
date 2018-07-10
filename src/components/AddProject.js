@@ -5,22 +5,9 @@ class AddProject extends Component{
     categories:['Web Design','Web Development','Mobile Development']
   }
 
-  constructor(){
-    super();
-    this.state = {
-      newProject:{}
-    }
-  }
-
   handleSubmit(e){
     e.preventDefault();
-    if(this.refs.title.value===''){
-      alert("Title is required ...");
-    }else{
-      this.setState({newProject:{
-
-      }});
-    }
+    console.log("Submitted !");
   }
 
   render(){
@@ -31,7 +18,7 @@ class AddProject extends Component{
     return(
       <div>
         <h3>Add Project</h3>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <label>Title &nbsp;</label>
             <input type="text" ref="title" />
